@@ -29,6 +29,11 @@ Plan: ~/.claude/plans/baue-einen-konverter-der-hashed-rocket.md
   Zoom und sah in QET mehr als doppelt so fett aus wie die Vorschau. Vorschau wertet line-weight wie QET aus.
 - GUI-Screenshot für Tests: Umgebungsvariable DXF2QET_SCREENSHOT=<png> setzen, Fenster schließt nach 1,5 s.
 
+## Releases
+- Quellcode-Repo bleibt privat. Downloads liegen öffentlich in christianngl/dxf2qet-releases (nur README + Releases).
+- Ablauf: Version in src/dxf2qet/__init__.py und pyproject.toml erhöhen → .\build.ps1 (ZIP + Einzeldatei-EXE in dist\)
+  → Smoke-Test mit DXF2QET_SCREENSHOT → `gh release create v<version> dist\* -R christianngl/dxf2qet-releases`.
+
 ## Log
 - 2026-10-22: Erstversion gebaut, 15 Tests grün, GUI-Screenshots geprüft.
 - 2026-10-22: Standalone-ZIP (67 MB) gebaut, entpackt in leerem Ordner getestet, auf Desktop kopiert.

@@ -14,8 +14,12 @@ Wandelt DXF-Zeichnungen in **QElectroTech**-Dateien um:
 
 ## Weitergeben ohne Python
 
-`.\build.ps1` baut `dist\dxf2qet-<version>-win64.zip`: entpacken, `dxf2qet.exe` starten (oder eine DXF
-daraufziehen). Läuft auf Windows 10/11 x64 ohne Installation.
+`.\build.ps1` baut zwei Varianten, beide laufen auf Windows 10/11 x64 ohne Installation:
+
+- `dist\dxf2qet-<version>-win64.zip` – portabel: entpacken, `dxf2qet.exe` starten (oder eine DXF daraufziehen)
+- `dist\dxf2qet-<version>-win64.exe` – eine einzelne Datei, startet etwas langsamer (entpackt sich nach `%TEMP%`)
+
+Öffentliche Downloads: https://github.com/christianngl/dxf2qet-releases/releases
 
 ## Was übernommen wird
 

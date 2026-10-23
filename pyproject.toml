@@ -1,6 +1,6 @@
 [project]
 name = "dxf2qet"
-version = "0.1.0"
+version = "0.1.1"
 description = "Konvertiert DXF-Zeichnungen in QElectroTech-Elemente (.elmt) und -Projekte (.qet)"
 requires-python = ">=3.12"
 dependencies = [
