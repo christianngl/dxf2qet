@@ -5,7 +5,23 @@ Wandelt DXF-Zeichnungen in **QElectroTech**-Dateien um:
 - **Element (`.elmt`)** – ein Symbol für die eigene Sammlung (in QET: Sammlung › Benutzerelemente, Datei dort ablegen oder im Element-Editor öffnen)
 - **Projekt (`.qet`)** – ein Schaltplan-Blatt, auf dem die Zeichnung als eingebettetes Element liegt
 
-## Start
+## Download
+
+Unter [Releases](../../releases/latest) gibt es zwei Varianten. Beide laufen ohne Installation auf Windows 10/11 (64 Bit):
+
+| Datei | Variante |
+|---|---|
+| `dxf2qet-<version>-win64.exe` | Einzelne Datei: herunterladen und starten. Der Start dauert etwas länger, weil sie sich bei jedem Start nach `%TEMP%` entpackt. |
+| `dxf2qet-<version>-win64.zip` | Portabel: entpacken (z. B. auf einen USB-Stick) und `dxf2qet.exe` im Ordner starten. Startet schneller. |
+
+Eine DXF-Datei kann auch direkt auf `dxf2qet.exe` gezogen werden.
+
+Die Programme sind nicht signiert. Windows SmartScreen meldet deshalb beim ersten Start eventuell
+„Der Computer wurde durch Windows geschützt“. Dann auf **Weitere Informationen › Trotzdem ausführen** klicken.
+
+Fehler oder Wünsche bitte als [Issue](../../issues) melden.
+
+## Start aus dem Quellcode
 
 - Desktop-Verknüpfung **„DXF zu QElectroTech“** – eine DXF-Datei auf das Symbol ziehen öffnet sie direkt
 - oder `start.ps1` (richtet beim ersten Mal `.venv` mit uv ein)
@@ -19,7 +35,7 @@ Wandelt DXF-Zeichnungen in **QElectroTech**-Dateien um:
 - `dist\dxf2qet-<version>-win64.zip` – portabel: entpacken, `dxf2qet.exe` starten (oder eine DXF daraufziehen)
 - `dist\dxf2qet-<version>-win64.exe` – eine einzelne Datei, startet etwas langsamer (entpackt sich nach `%TEMP%`)
 
-Öffentliche Downloads: https://github.com/christianngl/dxf2qet-releases/releases
+Fertige Builds werden als [Release](../../releases) in diesem Repo veröffentlicht.
 
 ## Was übernommen wird
 

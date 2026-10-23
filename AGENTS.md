@@ -30,10 +30,11 @@ Plan: ~/.claude/plans/baue-einen-konverter-der-hashed-rocket.md
 - GUI-Screenshot für Tests: Umgebungsvariable DXF2QET_SCREENSHOT=<png> setzen, Fenster schließt nach 1,5 s.
 
 ## Releases
-- Quellcode-Repo bleibt privat. Downloads liegen öffentlich in christianngl/dxf2qet-releases (nur README + Releases).
+- Downloads sind GitHub-Releases in diesem Repo (das frühere Extra-Repo dxf2qet-releases wurde hierher zusammengeführt).
 - Ablauf: Version in src/dxf2qet/__init__.py und pyproject.toml erhöhen → .\build.ps1 (ZIP + Einzeldatei-EXE in dist\)
-  → Smoke-Test mit DXF2QET_SCREENSHOT → `gh release create v<version> dist\* -R christianngl/dxf2qet-releases`.
+  → Smoke-Test mit DXF2QET_SCREENSHOT → `gh release create v<version> dist\*`.
 
 ## Log
 - 2026-10-22: Erstversion gebaut, 15 Tests grün, GUI-Screenshots geprüft.
 - 2026-10-22: Standalone-ZIP (67 MB) gebaut, entpackt in leerem Ordner getestet, auf Desktop kopiert.
+- 2026-10-23: Release-Repo dxf2qet-releases hierher zusammengeführt (Download-Teil der README, Release v0.1.1 mit EXE + ZIP).
