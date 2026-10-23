@@ -25,6 +25,8 @@ Plan: ~/.claude/plans/baue-einen-konverter-der-hashed-rocket.md
 - Gepackte .exe: Drag&Drop-Erkennung über sys.frozen, Icon über sys._MEIPASS. Die .exe hat keine Konsole,
   CLI-Ausgaben gibt es nur in der Quellversion (start.ps1).
 - build.ps1 ohne ErrorActionPreference=Stop (PS 5.1 wertet uv-stderr sonst als Fehler).
+- Linienstärke: line-weight "thin" (Qt-Stiftbreite 0 = kosmetisch 1 px). "normal" = 1,0 Einheiten, wächst mit dem
+  Zoom und sah in QET mehr als doppelt so fett aus wie die Vorschau. Vorschau wertet line-weight wie QET aus.
 - GUI-Screenshot für Tests: Umgebungsvariable DXF2QET_SCREENSHOT=<png> setzen, Fenster schließt nach 1,5 s.
 
 ## Log

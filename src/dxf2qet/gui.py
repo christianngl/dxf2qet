@@ -25,6 +25,7 @@ from .transform import EmptyDrawingError, Options
 QET_LINE_STYLES = {
     "normal": Qt.SolidLine, "dashed": Qt.DashLine, "dotted": Qt.DotLine, "dashdotted": Qt.DashDotLine,
 }
+QET_LINE_WEIGHTS = {"thin": 0.0, "normal": 1.0, "hight": 2.0, "eleve": 5.0}
 
 
 class Preview(QGraphicsView):
@@ -117,8 +118,10 @@ class Preview(QGraphicsView):
 def _pen_brush(style: str) -> tuple[QPen, QBrush]:
     props = dict(p.split(":", 1) for p in style.split(";") if ":" in p)
     color = QColor(*QET_COLORS.get(props.get("color", "black"), (0, 0, 0)))
-    pen = QPen(color, 1)
-    pen.setCosmetic(True)
+    # Breiten wie QET (CustomElementGraphicPart::applyStylesToQPainter); thin = kosmetisch 1 px
+    width = QET_LINE_WEIGHTS.get(props.get("line-weight", "thin"), 0.0)
+    pen = QPen(color, width)
+    pen.setCosmetic(width == 0)
     pen.setStyle(QET_LINE_STYLES.get(props.get("line-style", "normal"), Qt.SolidLine))
     filling = props.get("filling", "none")
     brush = QBrush(QColor(*QET_COLORS[filling])) if filling in QET_COLORS else QBrush(Qt.NoBrush)

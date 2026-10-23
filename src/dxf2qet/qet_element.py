@@ -31,8 +31,9 @@ def num(v: float) -> str:
 
 
 def style_attr(s: Style) -> str:
+    # "thin" = kosmetischer 1-px-Stift; "normal" wäre 1 Einheit breit und wirkt in QET (Zoom) sehr fett
     filling = s.color if s.filled else "none"
-    return f"line-style:{s.line};line-weight:normal;filling:{filling};color:{s.color}"
+    return f"line-style:{s.line};line-weight:thin;filling:{filling};color:{s.color}"
 
 
 def new_uuid() -> str:

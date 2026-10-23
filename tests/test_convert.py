@@ -115,6 +115,8 @@ def test_mixed_entities_and_skips(samples):
     assert len(xml.findall("ellipse")) == 1  # nur die achsparallele volle Ellipse
     assert len(xml.findall("arc")) == 1
     assert any("filling:black" in p.get("style") for p in xml.findall("polygon"))
+    # "normal" = 1 Einheit breit und in QET viel fetter als die Vorschau; "thin" = 1 px
+    assert all("line-weight:thin" in p.get("style") for p in xml if p.get("style"))
 
 
 def test_layer_filter(samples):
