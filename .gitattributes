@@ -1,0 +1,18 @@
+# Zeilenenden: im Repo LF, auf Windows/Mac jeweils passend ausgecheckt
+* text=auto
+*.ps1 text eol=crlf
+*.cmd text eol=crlf
+*.bat text eol=crlf
+*.sh  text eol=lf
+
+# Binärdateien
+*.png binary
+*.jpg binary
+*.jpeg binary
+*.gif binary
+*.ico binary
+*.webp binary
+*.dat binary
+*.zip binary
+*.exe binary
+*.dll binary
