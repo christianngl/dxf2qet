@@ -5,6 +5,8 @@ Wandelt DXF-Zeichnungen in **QElectroTech**-Dateien um:
 - **Element (`.elmt`)** – ein Symbol für die eigene Sammlung (in QET: Sammlung › Benutzerelemente, Datei dort ablegen oder im Element-Editor öffnen)
 - **Projekt (`.qet`)** – ein Schaltplan-Blatt, auf dem die Zeichnung als eingebettetes Element liegt
 
+![Hauptfenster mit dem Beispielsymbol aus tests/make_samples.py](docs/screenshots/hauptfenster.png)
+
 ## Download
 
 Unter [Releases](../../releases/latest) gibt es zwei Varianten. Beide laufen ohne Installation auf Windows 10/11 (64 Bit):
@@ -57,6 +59,7 @@ Was nicht passt (z. B. POINT, MESH, Bilder), steht im Protokoll unter „Übersp
 uv sync
 uv run pytest
 uv run python tests/make_samples.py   # Beispiel-DXFs nach tests/samples
+uv run python tools/screenshot.py tests/samples/symbol.dxf docs/screenshots/hauptfenster.png   # Screenshot für die README
 ```
 
 Aufbau: `reader.py` (DXF → Primitive) → `transform.py` (Y-Spiegelung, Maßstab, Hotspot, Raster)
