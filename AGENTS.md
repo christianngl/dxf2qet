@@ -9,7 +9,7 @@ Plan: ~/.claude/plans/baue-einen-konverter-der-hashed-rocket.md
 - [x] Tests (pytest, Beispiel-DXFs aus tests/make_samples.py)
 - [x] GUI mit Vorschau, Layer-Filter, Optionen (QSettings)
 - [x] start.ps1, Desktop-Verknüpfung „DXF zu QElectroTech“ (pythonw -m dxf2qet, Icon assets/icon.ico), cockpit.ini
-- [x] Eigenständiges Paket: build.ps1 (PyInstaller, --windowed) -> dist\dxf2qet-<version>-win64.zip, Kopie auf dem Desktop
+- [x] Eigenständiges Paket: build.ps1 (PyInstaller, --windowed) -> dist\dxf2qet-Setup-<version>.exe und dist\dxf2qet-<version>-portable.exe
 - [ ] Sichtprüfung in echtem QElectroTech (ist auf diesem PC nicht installiert)
 
 ## Wissen / Stolpersteine
@@ -31,10 +31,11 @@ Plan: ~/.claude/plans/baue-einen-konverter-der-hashed-rocket.md
 
 ## Releases
 - Downloads sind GitHub-Releases in diesem Repo (das frühere Extra-Repo dxf2qet-releases wurde hierher zusammengeführt).
-- Ablauf: Version in src/dxf2qet/__init__.py und pyproject.toml erhöhen → .\build.ps1 (ZIP + Einzeldatei-EXE in dist\)
+- Ablauf: Version in src/dxf2qet/__init__.py und pyproject.toml erhöhen → .\build.ps1 (Installer dxf2qet-Setup-<version>.exe + portable Einzeldatei dxf2qet-<version>-portable.exe in dist\, löscht alte Builds, braucht Inno Setup 6)
   → Smoke-Test mit DXF2QET_SCREENSHOT → `gh release create v<version> dist\*`.
 
 ## Log
 - 2026-10-22: Erstversion gebaut, 15 Tests grün, GUI-Screenshots geprüft.
 - 2026-10-22: Standalone-ZIP (67 MB) gebaut, entpackt in leerem Ordner getestet, auf Desktop kopiert.
 - 2026-10-23: Release-Repo dxf2qet-releases hierher zusammengeführt (Download-Teil der README, Release v0.1.1 mit EXE + ZIP).
+- 2026-10-25: Releases nur noch als EXE: Installer (Inno Setup, packaging\setup.iss, ohne Adminrechte) und portable Einzeldatei, kein ZIP mehr.

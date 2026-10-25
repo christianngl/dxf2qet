@@ -16,3 +16,14 @@
 *.zip binary
 *.exe binary
 *.dll binary
+
+# Nicht in die Quelltext-Archive der Releases (Entwicklungs- und KI-Dateien)
+CLAUDE.md export-ignore
+AGENTS.md export-ignore
+/claude export-ignore
+/.claude export-ignore
+/ideen export-ignore
+/projekt.ini export-ignore
+/project.config.yaml export-ignore
+.gitkeep export-ignore
+.gitattributes export-ignore

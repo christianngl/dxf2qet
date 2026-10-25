@@ -9,14 +9,14 @@ Wandelt DXF-Zeichnungen in **QElectroTech**-Dateien um:
 
 ## Download
 
-Unter [Releases](../../releases/latest) gibt es zwei Varianten. Beide laufen ohne Installation auf Windows 10/11 (64 Bit):
+Unter [Releases](../../releases/latest) gibt es zwei Varianten für Windows 10/11 (64 Bit):
 
 | Datei | Variante |
 |---|---|
-| `dxf2qet-<version>-win64.exe` | Einzelne Datei: herunterladen und starten. Der Start dauert etwas länger, weil sie sich bei jedem Start nach `%TEMP%` entpackt. |
-| `dxf2qet-<version>-win64.zip` | Portabel: entpacken (z. B. auf einen USB-Stick) und `dxf2qet.exe` im Ordner starten. Startet schneller. |
+| `dxf2qet-Setup-<version>.exe` | Installer: installiert ohne Adminrechte, legt einen Startmenü-Eintrag und auf Wunsch ein Desktop-Symbol an, lässt sich über die Windows-Einstellungen wieder entfernen. Startet schnell. |
+| `dxf2qet-<version>-portable.exe` | Portabel: eine einzelne Datei ohne Installation (z. B. für einen USB-Stick). Der Start dauert etwas länger, weil sie sich bei jedem Start nach `%TEMP%` entpackt. |
 
-Eine DXF-Datei kann auch direkt auf `dxf2qet.exe` gezogen werden.
+Eine DXF-Datei kann auch direkt auf das Programmsymbol gezogen werden.
 
 Die Programme sind nicht signiert. Windows SmartScreen meldet deshalb beim ersten Start eventuell
 „Der Computer wurde durch Windows geschützt“. Dann auf **Weitere Informationen › Trotzdem ausführen** klicken.
@@ -32,10 +32,10 @@ Fehler oder Wünsche bitte als [Issue](../../issues) melden.
 
 ## Weitergeben ohne Python
 
-`.\build.ps1` baut zwei Varianten, beide laufen auf Windows 10/11 x64 ohne Installation:
+`.\build.ps1` baut zwei Varianten für Windows 10/11 x64 (braucht Inno Setup 6: `winget install JRSoftware.InnoSetup --scope user`):
 
-- `dist\dxf2qet-<version>-win64.zip` – portabel: entpacken, `dxf2qet.exe` starten (oder eine DXF daraufziehen)
-- `dist\dxf2qet-<version>-win64.exe` – eine einzelne Datei, startet etwas langsamer (entpackt sich nach `%TEMP%`)
+- `dist\dxf2qet-Setup-<version>.exe` – Installer aus dem Ordner-Build von PyInstaller (`packaging\setup.iss`)
+- `dist\dxf2qet-<version>-portable.exe` – eine einzelne Datei ohne Installation, startet etwas langsamer (entpackt sich nach `%TEMP%`)
 
 Fertige Builds werden als [Release](../../releases) in diesem Repo veröffentlicht.
 
